@@ -1,8 +1,8 @@
 {
   "name": "electronexample",
-  "productName": "electronexample",
+  "productName": "Electron Example App",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "An example of an ElectronJS desktop app. This is meant to be a bare-bones app to explore Electron and how it can work with different frameworks.",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -27,7 +27,7 @@
     "name": "Seth Brock",
     "email": "seth@titancraftminis.com"
   },
-  "license": "MIT",
+  "license": "UNLICENSED",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
   }
