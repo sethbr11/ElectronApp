@@ -48,7 +48,7 @@ As with any web app, *index.html* is intended to be the starting point for your 
 ## Step 3: Publishing
 Before getting too far into app development, it's good to make sure publishing works and is configured in the app. We will not get into code signing yet, as that is a whole other process, but we will go over publishing releases and, at the very least, configuring temporary certificates to be able to run your program, especially on operating systems like Mac that make this hard. The documentation for publishing with Electron Forge is not the most descriptive, but can be found [here](https://www.electronforge.io/config/publishers).
 
-To see everything that was changed in this project to get it to publish, you can check out the **associated commit**, but we will also talk about it in this document. 
+To see everything that was changed in this project to get it to publish, you can check out the [associated commit](https://github.com/sethbr11/ElectronApp/commit/764155c61a8464a21b0b33ab57a0ea047e3a98b2), but we will also talk about it in this document. 
 
 ### Setup
 The first step is to add the publisher section to forge.config.js under the module.exports, which for GitHub looks a little like this:
