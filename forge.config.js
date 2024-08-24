@@ -7,19 +7,19 @@ module.exports = {
   },
   rebuildConfig: {},
   makers: [
-    {
+    { // Windows
       name: '@electron-forge/maker-squirrel',
       config: {},
     },
-    {
+    { // macOS
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
     },
-    {
+    { // Linux
       name: '@electron-forge/maker-deb',
       config: {},
     },
-    {
+    { // Linux
       name: '@electron-forge/maker-rpm',
       config: {},
     },
@@ -41,4 +41,17 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'sethbr11',
+          name: 'ElectronApp'
+        },
+        prerelease: true,
+        draft: false
+      }
+    }
+  ]
 };

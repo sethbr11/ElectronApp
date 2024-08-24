@@ -1,18 +1,26 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, autoUpdater } = require('electron');
 const path = require('node:path');
+const { updateElectronApp } = require('update-electron-app');
+
+// Update the app when a new release is available
+if (process.env.NODE_ENV === 'production') {
+  updateElectronApp({ repo: 'sethbr11/ElectronApp' });
+}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+let mainWindow;
 const createWindow = () => {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      devTools: false
     },
   });
 
