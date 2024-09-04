@@ -48,7 +48,7 @@ As with any web app, *index.html* is intended to be the starting point for your 
 ## Step 3: Publishing
 Before getting too far into app development, it's good to make sure publishing works and is configured in the app. We will get a little bit into code signing, but just enough to be able to do testing. This would involve configuring temporary certificates for Mac, since MacOS won't let you run your installed app without it. The documentation for publishing with Electron Forge is not the most descriptive, but can be found [here](https://www.electronforge.io/config/publishers).
 
-To see everything that was changed in this project to get it to publish, you can check out the [associated commit](https://github.com/sethbr11/ElectronApp/commit/764155c61a8464a21b0b33ab57a0ea047e3a98b2), but we will also talk about it in this document. 
+To see everything that was changed in this project to get it to publish, you can check out the [associated commit](https://github.com/sethbr11/ElectronApp/commit/764155c61a8464a21b0b33ab57a0ea047e3a98b2), but we will also talk about it in this document. When you are ready to publish your app, just run ```npm run publish```.
 
 ### Setup
 The first step is to add the publisher section to forge.config.js under the module.exports, which for GitHub looks a little like this:
@@ -154,6 +154,6 @@ To get around the MacOS protections, you will have to create your own certificat
 5. Download the dmg file for the testapp from the releases section. Run the dmg to install the app.
 6. Open the terminal and navigate to the Application folder where the downloaded app is saved. This should be in the very base directory and not the Application folder under your user directory.
 7. Run the following commands in the terminal:
-    - xattr -cr packagedemo.app (removes all extended attributes, including metadata and Finder information, from the specified file or directory and its contents).
-    - codesign --deep --force --sign "ElectronTestAppCertificate" packagedemo.app (applies the certificate).
+    - ```xattr -cr packagedemo.app``` (removes all extended attributes, including metadata and Finder information, from the specified file or directory and its contents).
+    - ```codesign --deep --force --sign "ElectronTestAppCertificate" packagedemo.app``` (applies the certificate).
 8. Run the app as normal!
